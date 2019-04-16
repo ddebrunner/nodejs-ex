@@ -1,5 +1,13 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://userY51:xFnUjEfxHM8DuCEc@localhost:27777/auctions';
+var url = 'mongodb://'
+    + process.env['database-user']
+    + ':'
+    + process.env['database-password']
+    + '@'
+    + process.env.MONGODB_AUCTIONS_SERVICE_HOST
+    + ':'
+    + process.env.MONGODB_AUCTIONS_SERVICE_PORT
+    + '/auctions';
 var str = "";
 
 var methods = {};
