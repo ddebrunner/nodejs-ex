@@ -3,7 +3,7 @@ var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
 
-var auctions = require('auctions');
+var auctions = require('./auctions.js');
     
 Object.assign=require('object-assign')
 
