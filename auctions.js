@@ -20,13 +20,14 @@ methods.ge = function(req, res) {
        str = "";
        cursor.forEach(function(item) {
            if (item != null) {
-                   str = str + item + "</br>";
+                   str = str + JSON.stringify(item) + "</br>";
            }
        }, function(err) {
            res.send(str);
            db.close();
           }
        );
+      db.close();
    });
 };
 
