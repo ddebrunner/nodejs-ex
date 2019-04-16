@@ -2,6 +2,8 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
+
+var auctions = require('auctions');
     
 Object.assign=require('object-assign')
 
@@ -108,6 +110,8 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
+
+app.get('/events', auctions.ge);
 
 // error handling
 app.use(function(err, req, res, next){
