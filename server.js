@@ -111,7 +111,7 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
-app.get('/events', function (req, res) { auctions.ge();});
+app.get('/events', function (req, res) { auctions.data.ge();});
 
 // error handling
 app.use(function(err, req, res, next){

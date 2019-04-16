@@ -2,7 +2,9 @@ var MongoClient = require('mongodb').MongoClient;
 var url = 'mongodb://userY51:xFnUjEfxHM8DuCEc@localhost:27777/auctions';
 var str = "";
 
-function ge(req, res) {
+var methods = {};
+
+methods.ge = function(req, res) {
    MongoClient.connect(url, function(err, client) {
        var db = client.db('auctions');
        var collection = db.collection('events');
@@ -18,4 +20,6 @@ function ge(req, res) {
           }
        );
    });
-}
+};
+
+exports.data = methods
