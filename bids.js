@@ -16,7 +16,7 @@ methods.pb = function(req, res) {
    MongoClient.connect(url, function(err, client) {
        var db = client.db('auctions');
        var collection = db.collection('events');
-       var cursor = collection.find().sort($natural: -1}).limit(1);
+       var cursor = collection.find().sort({$natural: -1}).limit(1);
        str = "";
        cursor.forEach(function(item) {
            if (item != null) {
