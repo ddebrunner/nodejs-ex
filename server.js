@@ -4,6 +4,7 @@ var express = require('express'),
     morgan  = require('morgan');
 
 var auctions = require('./auctions.js');
+var bids = require('./bids.js');
     
 Object.assign=require('object-assign')
 
@@ -29,6 +30,12 @@ app.get('/events', function (req, res) {
    console.log('Events Request');
    auctions.data.ge(req, res);
    console.log('Events Request DONE');
+});
+
+app.get('/bids', function (req, res) {
+   console.log('Bids Request');
+   bids.data.pb(req, res);
+   console.log('Bids Request DONE');
 });
 
 // error handling
